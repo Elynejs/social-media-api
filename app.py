@@ -9,10 +9,13 @@ i = 0
 while i < len(trends):
     k = 0
     try:
-        for tweet in get_tweets(trends[i]):
+        for tweet in get_tweets(trends[i], pages=1):
+            print(tweet['tweetId'])
             k += 1
-            data[i] = k
+            data[trends[i]] = k
+            print(data)
     except:
-        continue
+        print(data)
+        print('error occured')
+        break
     i += 1
-print(data)
