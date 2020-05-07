@@ -21,7 +21,7 @@ for trend in trends:
                         for j in range(0, len(tweet['entries']['photos'])):
                             try:
                                 url = tweet['entries']['photos'][j]
-                                name = f'{t_id}_{j}'
+                                name = f'{trend}_{t_id}_{j}'
                                 dl_img(url, name)
                                 print('image downloaded')
                             except:
