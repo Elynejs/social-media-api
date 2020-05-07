@@ -1,8 +1,7 @@
-from twitter_scraper import *
+import twitter_scraper as t
 import urllib.request
-import random
 
-trends = get_trends()
+trends = t.get_trends()
 pages_to_search = 10
 ids = []
 
@@ -14,7 +13,7 @@ def dl_img(url, name):
 for trend in trends:
     try:
         for i in range(1, pages_to_search):
-            for tweet in get_tweets(trend, pages=i):
+            for tweet in t.get_tweets(trend, pages=i):
                 if len(tweet['entries']['photos']):
                     t_id = tweet['tweetId']
                     if t_id not in ids:
